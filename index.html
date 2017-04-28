@@ -5,14 +5,24 @@
     <title>Angularjs Tutorial - WGS 2017</title>
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css" />
     <script src="node_modules/angular/angular.min.js"></script>
+    <link href="starter-template.css" rel="stylesheet">
+
   </head>
   <body>
 
-    <div>
-      <label>Name:</label>
-      <input type="text" ng-model="yourName" >
-    </div>
-    <p>Hello, {{yourName}}!</p>
+
+    <div class="container">
+
+      <div class="starter-template">
+
+        <div><input ng-model="yourName" class="form-control"></div>
+
+        <h1>Hello, {{yourName}}!</h1>
+        
+      </div>
+
+    </div><!-- /.container -->
+
 
   </body>
 </html>
