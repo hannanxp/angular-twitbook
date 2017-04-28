@@ -1,6 +1,9 @@
-angular.module('myApp').controller('TwitController', ['$scope', function ($scope) {
+angular.module('myApp').component('twitPage', {
+  templateUrl: 'twit-template.html',
+  controller: function twitController() {
+    var self = this;
 
-    $scope.twits = [
+    self.twits = [
       {
         "id": 5,
         "twit": "quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
@@ -28,7 +31,7 @@ angular.module('myApp').controller('TwitController', ['$scope', function ($scope
       }
     ];
 
-    $scope.shareTwit = function () {
+    this.shareTwit = function () {
       var date = new Date();
       var ymd = date.getFullYear() + '-' + ('0' + (date.getMonth() + 1)).slice(-2) + '-' + ('0' + date.getDate()).slice(-2);
 
@@ -38,14 +41,12 @@ angular.module('myApp').controller('TwitController', ['$scope', function ($scope
       var his = h + ':' + m;
 
       var obj = {};
-      obj.id = $scope.twits.length + 1;
-      obj.twit = $scope.msg;
+      obj.id = self.twits.length + 1;
+      obj.twit = self.msg;
       obj.created = ymd + " " + his;
-      
-      
-      $scope.twits.unshift(obj);
-      $scope.msg = "";
+
+      this.twits.unshift(obj);
+      this.msg = "";
     };
-
-  }]);
-
+  }
+});
