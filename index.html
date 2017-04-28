@@ -1,29 +1,30 @@
 <!doctype html>
-<html lang="en" ng-app>
+<html lang="en" ng-app="myApp">
   <head>
     <meta charset="utf-8">
     <title>Angularjs Tutorial - WGS 2017</title>
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css" />
     <script src="node_modules/angular/angular.min.js"></script>
     <link href="starter-template.css" rel="stylesheet">
-
+    <script src="app.js"></script>
   </head>
-  <body>
+  <body ng-controller="TwitController">
 
 
     <div class="container">
-
-      <div class="starter-template">
-
-        <div><input ng-model="yourName" class="form-control"></div>
-
-        <h1 ng-show="yourName">Hello, {{yourName}}!</h1>
-        
-        <h4>Uppercase: {{ yourName | uppercase }}</h4>
-        <h4>Lowercase: {{ yourName | lowercase }}</h4>
-
+      <div class="row">
+        <div class="col-md-8">
+          <input class="form-control" ng-model="msg" placeholder="apa yang Anda pikirkan?">
+        </div>  
+        <div class="col-md-4">
+          <button class="btn btn-primary">GO</button>
+        </div>  
       </div>
-
+      
+      
+      <p ng-repeat="text in twits" style="margin-top: 20px; border-bottom: 1px dashed #eee">
+        {{text}}
+      </p>        
     </div><!-- /.container -->
 
 
