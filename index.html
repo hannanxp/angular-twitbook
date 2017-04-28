@@ -17,8 +17,11 @@
 
         <div><input ng-model="yourName" class="form-control"></div>
 
-        <h1>Hello, {{yourName}}!</h1>
+        <h1 ng-show="yourName">Hello, {{yourName}}!</h1>
         
+        <h4>Uppercase: {{ yourName | uppercase }}</h4>
+        <h4>Lowercase: {{ yourName | lowercase }}</h4>
+
       </div>
 
     </div><!-- /.container -->
