@@ -7,6 +7,11 @@ angular.module('myApp', []).controller('TwitController', ['$scope', function ($s
       "Consectetur adipiscing elit",
       "Lorem ipsum dolor sit amet"
     ];
+    
+    $scope.shareTwit = function() {
+      $scope.twits.unshift($scope.msg);
+      $scope.msg = "";
+    };
 
   }]);
 

@@ -12,17 +12,19 @@
 
 
     <div class="container">
+
       <div class="row">
         <div class="col-md-8">
           <input class="form-control" ng-model="msg" placeholder="apa yang Anda pikirkan?">
         </div>  
         <div class="col-md-4">
-          <button class="btn btn-primary">GO</button>
+          <button class="btn btn-primary" ng-click="shareTwit()">Share!</button>
         </div>  
       </div>
       
+      <p class="twit twit-blue">{{msg}}</p>
       
-      <p ng-repeat="text in twits" style="margin-top: 20px; border-bottom: 1px dashed #eee">
+      <p ng-repeat="text in twits" class="twit">
         {{text}}
       </p>        
     </div><!-- /.container -->

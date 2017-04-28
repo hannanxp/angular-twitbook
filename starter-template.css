@@ -5,3 +5,10 @@ body {
   padding: 40px 15px;
   text-align: center;
 }
+.twit {
+  margin-top: 20px; 
+  border-bottom: 1px dashed #eee
+}
+.twit-blue {
+  color: #00b3ee;
+}
