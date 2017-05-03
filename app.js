@@ -8,6 +8,10 @@ angular.module('myApp', []);
  * In other words new FunctionYouPassedToService().
  */
 angular.module('myApp').service('toolboxServiceStyle', function () {
+  this.sayHello = function () {
+    var x = "You";
+    return "Hello, " + x + "!";
+  };
   this.getTime = function () {
     var d = new Date();
     return d.toLocaleString();
@@ -23,6 +27,10 @@ angular.module('myApp').service('toolboxServiceStyle', function () {
  */
 angular.module('myApp').factory('toolboxFactoryStyle', function () {
   return {
+    sayHello: function () {
+      var x = "You";
+      return "Hello, " + x + "!";
+    },
     getTime: function () {
       var d = new Date();
       return d.toLocaleString();
@@ -46,7 +54,8 @@ angular.module('myApp').provider('toolboxProviderStyle', function () {
     var name = this.name;
     return {
       sayHello: function () {
-        return "Hello, " + name + "!";
+        var x = name;
+        return "Hello, " + x + "!";
       },
       getTime: function () {
         var d = new Date();
@@ -64,6 +73,6 @@ angular.module('myApp').provider('toolboxProviderStyle', function () {
 /**
  * note the use of 'xxxProvider'!
  */
-angular.module('myApp').config(function(toolboxProviderStyleProvider){
-    toolboxProviderStyleProvider.setName('Wgeeks');
+angular.module('myApp').config(function (toolboxProviderStyleProvider) {
+  toolboxProviderStyleProvider.setName('Wgeeks');
 });
