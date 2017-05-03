@@ -82,13 +82,13 @@ angular.module('myApp').config(['toolboxProviderStyleProvider', '$locationProvid
 
     $routeProvider.
             when('/', {
-              template: 'HELLO'
+              template: '<h1>Share Your Status</h1><twit-page></twit-page>'
             }).when('/myprofile', {
               template: '<p>MY PROFILE</p>'
             }).when('/friends', {
               template: '<p>FRIENDS</p>'
             }).when('/profile/:userId', {
-              template: '<p>PROFILE X</p>'
+              template: '<p>PROFILE ID:xxx</p>'
             }).
             otherwise('/');
   }
