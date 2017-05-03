@@ -22,13 +22,18 @@
         <div class="panel panel-default" ng-controller="ToolboxCtrl">
           <div class="panel-heading"><span class="lead">Toolbox</span></div>
           <div class="panel-body">
-            <p><em>Time: </em> {{currentTime}}</p>
+            
+            <p><em>Controller: </em> {{timeFromController}}</p>
             <p>
               <em>Service: </em> {{timeFromService}}
             </p>
             <p>
               <em>Factory: </em> {{timeFromFactory}}
             </p>
+            <p>
+              <em>Provider: </em> {{timeFromProvider}}
+            </p>
+            <h3>{{greetingText}}</h3>
 
           </div>
         </div>
