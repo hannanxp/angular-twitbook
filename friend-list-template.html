@@ -3,7 +3,7 @@
   <div class="panel-body">
     <div class="form-group"><input class="form-control" ng-model="$ctrl.fsearch"></div>
     <div class="list-group">
-      <a ng-repeat="f in $ctrl.friends" href="#/profile/{{f.id}}" 
+      <a ng-repeat="f in $ctrl.friends | filter: $ctrl.fsearch" href="#/profile/{{f.id}}" 
          class="list-group-item list-group-item-action">{{f.name}}</a>
     </div>
   </div>
