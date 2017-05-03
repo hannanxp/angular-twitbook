@@ -1,11 +1,10 @@
-<div class="container">
-
+<div>
   <form class="form-horizontal" ng-submit="$ctrl.shareTwit()">
     <div class="form-group">
-      <div class="col-sm-8">
+      <div class="col-sm-9">
         <input class="form-control" ng-model="$ctrl.msg" placeholder="apa yang Anda pikirkan?">
       </div>
-      <div class="col-sm-4">
+      <div class="col-sm-3">
         <button type="submit" class="btn btn-primary" >Share!</button>
       </div>
     </div>
@@ -16,4 +15,4 @@
   <p ng-repeat="t in $ctrl.twits" class="twit">
     {{t.twit}} -- <em>{{t.created}}</em>
   </p>        
-</div><!-- /.container -->
+</div>

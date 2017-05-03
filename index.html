@@ -11,7 +11,32 @@
   </head>
   <body>
 
-    <twit-page></twit-page>
-    
+    <div class="container">
+      <div class="col-md-3">
+        <div class="panel panel-default">
+          <div class="panel-heading"><span class="lead">WGS Developer</span></div>
+          <div class="panel-body"><img class="img-responsive"  ng-src="{{'profile.jpg'}}"></div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading"><span class="lead">Friends Online</span></div>
+          <div class="panel-body">
+            <div class="list-group">
+              <a href="#/profile/{{2}}" class="list-group-item list-group-item-action">Cras justo odio</a>
+              <a href="#/profile/{{3}}" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a>
+              <a href="#/profile/{{4}}" class="list-group-item list-group-item-action">Morbi leo risus</a>
+              <a href="#/profile/{{5}}" class="list-group-item list-group-item-action">Porta ac consectetur ac</a>
+              <a href="#/profile/{{6}}" class="list-group-item list-group-item-action">Vestibulum at eros</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-9">
+        <h1>Share Your Status</h1>
+        <twit-page></twit-page>
+      </div>
+
+    </div>
+
+
   </body>
 </html>
