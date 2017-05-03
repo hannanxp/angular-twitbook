@@ -9,6 +9,7 @@
     <script src="app.js"></script>
     <script src="twit-component.js"></script>
     <script src="friend-list-component.js"></script>
+    <script src="toolbox-controller.js"></script>
   </head>
   <body>
 
@@ -18,11 +19,19 @@
           <div class="panel-heading"><span class="lead">WGS Developer</span></div>
           <div class="panel-body"><img class="img-responsive"  ng-src="{{'profile.jpg'}}"></div>
         </div>
-        <friend-list></friend-list>
+        <div class="panel panel-default" ng-controller="ToolboxCtrl">
+          <div class="panel-heading"><span class="lead">Toolbox</span></div>
+          <div class="panel-body">
+            <p><em>Time: </em> {{currentTime}}</p>
+          </div>
+        </div>
       </div>
-      <div class="col-md-9">
+      <div class="col-md-6">
         <h1>Share Your Status</h1>
         <twit-page></twit-page>
+      </div>
+      <div class="col-md-3">
+        <friend-list></friend-list>
       </div>
 
     </div>
