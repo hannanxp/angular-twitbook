@@ -1,4 +1,4 @@
-angular.module('myApp', []);
+angular.module('myApp', ['ngRoute']);
 
 //service style, probably the simplest one
 /**
@@ -73,6 +73,21 @@ angular.module('myApp').provider('toolboxProviderStyle', function () {
 /**
  * note the use of 'xxxProvider'!
  */
-angular.module('myApp').config(function (toolboxProviderStyleProvider) {
-  toolboxProviderStyleProvider.setName('Wgeeks');
-});
+angular.module('myApp').config(['toolboxProviderStyleProvider', '$locationProvider', '$routeProvider',
+  function (toolboxProviderStyleProvider, $locationProvider, $routeProvider) {
+
+    toolboxProviderStyleProvider.setName('Wgeeks');
+
+    $locationProvider.hashPrefix('');
+
+    $routeProvider.
+            when('/', {
+              template: 'HELLO'
+            }).when('/about', {
+              template: 'KITTY'
+            }).when('/profile/:userId', {
+              template: 'TEST'
+            }).
+            otherwise('/');
+  }
+]);
