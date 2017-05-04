@@ -84,12 +84,37 @@ angular.module('myApp').config(['toolboxProviderStyleProvider', '$locationProvid
             when('/', {
               template: '<h1>Share Your Status</h1><twit-page></twit-page>'
             }).when('/myprofile', {
-              template: '<h2>My Profile</h2>'
-            }).when('/friends', {
-              template: '<h2>Friend List</h2>'
-            }).when('/profile/:userId', {
-              template: '<profile-detail></profile-detail>'
-            }).
+      template: '<h2>My Profile</h2>'
+    }).when('/friends', {
+      template: '<h2>Friend List</h2>'
+    }).when('/profile/:userId', {
+      template: '<profile-detail></profile-detail>'
+    }).
             otherwise('/');
   }
 ]);
+
+
+angular.module('myApp').filter('unixTimeToString', function () {
+  return function (data) {
+    if (angular.isUndefined(data))
+      return '';
+    var date = new Date(data);
+    
+    var thedate = date.toDateString();
+    
+    // Hours part from the timestamp
+    var hours = date.getHours();
+    
+    // Minutes part from the timestamp
+    var minutes = "0" + date.getMinutes();
+    
+    // Seconds part from the timestamp
+    var seconds = "0" + date.getSeconds();
+
+    // Will display time in 10:30:23 format
+    var formattedTime = thedate + ', ' + hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
+
+    return formattedTime;
+  };
+});

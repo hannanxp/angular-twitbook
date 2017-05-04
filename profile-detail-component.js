@@ -5,5 +5,7 @@ angular.module('myApp').component('profileDetail', {
     
     self.userId = $routeParams.userId;
     self.userName = "Some One";
+    
+    self.timeStamp = new Date().getTime();
   }
 });
