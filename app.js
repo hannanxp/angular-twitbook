@@ -97,7 +97,7 @@ angular.module('myApp').config(['toolboxProviderStyleProvider', '$locationProvid
             .state({
               name: 'friends',
               url: '/friends',
-              template: ''
+              template: '<h2>Friend List</h2>'
             })
             .state({
               name: 'profile',
