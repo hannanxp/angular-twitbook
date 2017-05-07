@@ -1,4 +1,4 @@
-angular.module('myApp', ['ngRoute']);
+angular.module('myApp', ['ui.router']);
 
 //service style, probably the simplest one
 /**
@@ -73,24 +73,56 @@ angular.module('myApp').provider('toolboxProviderStyle', function () {
 /**
  * note the use of 'xxxProvider'!
  */
-angular.module('myApp').config(['toolboxProviderStyleProvider', '$locationProvider', '$routeProvider',
-  function (toolboxProviderStyleProvider, $locationProvider, $routeProvider) {
+angular.module('myApp').config(['toolboxProviderStyleProvider', '$locationProvider', '$stateProvider','$urlRouterProvider',
+  function (toolboxProviderStyleProvider, $locationProvider, $stateProvider, $urlRouterProvider) {
 
     toolboxProviderStyleProvider.setName('Wgeeks');
 
     $locationProvider.hashPrefix('');
+    
+    // no route goes to index
+    $urlRouterProvider.when('', '/');
 
-    $routeProvider.
-            when('/', {
+    $stateProvider
+            .state({
+              name: 'home',
+              url: '/',
               template: '<h1>Share Your Status</h1><twit-page></twit-page>'
-            }).when('/myprofile', {
-      template: '<h2>My Profile</h2>'
-    }).when('/friends', {
-      template: '<h2>Friend List</h2>'
-    }).when('/profile/:userId', {
-      template: '<profile-detail></profile-detail>'
-    }).
-            otherwise('/');
+            })
+            .state({
+              name: 'myprofile',
+              url: '/myprofile',
+              template: '<h2>My Profile</h2>'
+            })
+            .state({
+              name: 'friends',
+              url: '/friends',
+              template: ''
+            })
+            .state({
+              name: 'profile',
+              url: '/profile/:userId',
+              template: '<profile-detail></profile-detail>'
+            })
+            ;
+
+    /*
+    $routeProvider
+            .when('/', {
+              template: '<h1>Share Your Status</h1><twit-page></twit-page>'
+            })
+            .when('/myprofile', {
+              template: '<h2>My Profile</h2>'
+            })
+            .when('/friends', {
+              template: '<h2>Friend List</h2>'
+            })
+            .when('/profile/:userId', {
+              template: '<profile-detail></profile-detail>'
+            })
+            .otherwise('/');
+    */
+    
   }
 ]);
 
@@ -100,15 +132,15 @@ angular.module('myApp').filter('unixTimeToString', function () {
     if (angular.isUndefined(data))
       return '';
     var date = new Date(data);
-    
+
     var thedate = date.toDateString();
-    
+
     // Hours part from the timestamp
     var hours = date.getHours();
-    
+
     // Minutes part from the timestamp
     var minutes = "0" + date.getMinutes();
-    
+
     // Seconds part from the timestamp
     var seconds = "0" + date.getSeconds();
 
