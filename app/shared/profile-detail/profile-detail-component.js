@@ -1,5 +1,5 @@
 angular.module('myApp').component('profileDetail', {
-  templateUrl: 'profile-detail-template.html',
+  templateUrl: 'app/shared/profile-detail/profile-detail-template.html',
   controller: function profileDetailCtrl($routeParams) {
     var self = this;
     

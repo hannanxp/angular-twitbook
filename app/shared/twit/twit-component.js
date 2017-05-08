@@ -1,5 +1,5 @@
 angular.module('myApp').component('twitPage', {
-  templateUrl: 'twit-template.html',
+  templateUrl: 'app/shared/twit/twit-template.html',
   controller: function twitController($http) {
     var self = this;
 

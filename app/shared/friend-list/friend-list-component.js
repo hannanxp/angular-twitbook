@@ -1,5 +1,5 @@
 angular.module('myApp').component('friendList', {
-  templateUrl: 'friend-list-template.html',
+  templateUrl: 'app/shared/friend-list/friend-list-template.html',
   controller: function twitController($http) {
     var self = this;
     
