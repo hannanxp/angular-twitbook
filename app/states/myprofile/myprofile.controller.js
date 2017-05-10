@@ -1,15 +1,20 @@
-angular.module('myApp').controller('myprofileController', ['$scope','$http',
+angular.module('myApp').controller('myprofileController', ['$scope', '$http',
   function ($scope, $http) {
-    
+
     $scope.user = {};
-    
-    $scope.saveUser = function() {
-      
+
+    $scope.saveUser = function () {
+      console.log("Form:", $scope.form);
+      console.log("User:", $scope.user);
     };
-    
-    $scope.resetForm = function() {
-      
+
+    $scope.resetForm = function (form) {
+      if (form) {
+        form.$setPristine();
+        form.$setUntouched();
+      }
+      $scope.user = {};
     };
-    
-    
+
+
   }]);
