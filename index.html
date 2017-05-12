@@ -19,24 +19,16 @@
         font-style: italic;
       }
     </style>
-    
+
     <!-- Angular and libs -->
     <script src="node_modules/angular/angular.min.js"></script>
     <script src="node_modules/@uirouter/angularjs/release/angular-ui-router.min.js"></script>
     <script src="node_modules/oclazyload/dist/ocLazyLoad.min.js"></script>
-    
+
     <!-- App modules and routes -->
     <script src="app/app.module.js"></script>
     <script src="app/app.routes.js"></script>
-    
-    <!-- states -->
-    <!--
-    <script src="app/states/friends/friends.controller.js"></script>
-    <script src="app/states/home/home.controller.js"></script>
-    <script src="app/states/myprofile/myprofile.controller.js"></script>
-    <script src="app/states/profile/profile.controller.js"></script>
-    -->
-    
+
     <!-- shared -->
     <script src="app/shared/friend-list/friend-list-component.js"></script>
     <script src="app/shared/profile-detail/profile-detail-component.js"></script>
@@ -98,6 +90,15 @@
       </div>
       <div class="col-md-3">
         <friend-list></friend-list>
+        <div class="panel panel-default" ng-controller="OrganizationCtrl">
+          <div class="panel-heading"><span class="lead">Organization User</span></div>
+          <div class="panel-body">
+            <div class="list-group">
+              <a ng-repeat="n in userNames"  
+                 class="list-group-item list-group-item-action">{{n}} from {{userDepartement}}</a>
+            </div>
+          </div>
+        </div>
       </div>
 
     </div>
