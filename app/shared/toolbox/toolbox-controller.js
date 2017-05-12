@@ -15,6 +15,12 @@ angular.module('myApp').controller('ToolboxCtrl', ['$scope','toolboxServiceStyle
     $scope.userName = "Budi";
     $rootScope.userDepartement = "Developer";
     
+    $scope.$on('share-twit', function(e, args){
+      console.log('e:', e);
+      console.log('args:', args);
+      $scope.lastTwit = args.twit;
+    });
+    
   }]);
 
 
