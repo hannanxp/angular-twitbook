@@ -1,6 +1,6 @@
 angular.module('myApp').component('twitPage', {
   templateUrl: 'app/shared/twit/twit-template.html',
-  controller: function twitController($http, $rootScope) {
+  controller: function twitController($http, $rootScope, store) {
     var self = this;
 
     $http.get('server/twits.json').then(function (response) {
@@ -25,6 +25,8 @@ angular.module('myApp').component('twitPage', {
       this.msg = "";
       
       $rootScope.$broadcast('share-twit', obj);
+      
+      store.set('last_obj', obj);
       
     };
   }

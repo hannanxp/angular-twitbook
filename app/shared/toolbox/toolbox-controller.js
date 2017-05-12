@@ -1,5 +1,5 @@
-angular.module('myApp').controller('ToolboxCtrl', ['$scope','toolboxServiceStyle','toolboxFactoryStyle','toolboxProviderStyle','$rootScope',
-  function ($scope, toolboxServiceStyle, toolboxFactoryStyle, toolboxProviderStyle, $rootScope) {
+angular.module('myApp').controller('ToolboxCtrl', ['$scope','toolboxServiceStyle','toolboxFactoryStyle','toolboxProviderStyle','$rootScope','store',
+  function ($scope, toolboxServiceStyle, toolboxFactoryStyle, toolboxProviderStyle, $rootScope, store) {
     var d = new Date();
 
     $scope.timeFromController = d.toLocaleString();
@@ -18,8 +18,11 @@ angular.module('myApp').controller('ToolboxCtrl', ['$scope','toolboxServiceStyle
     $scope.$on('share-twit', function(e, args){
       console.log('e:', e);
       console.log('args:', args);
-      $scope.lastTwit = args.twit;
+      $scope.lastTwit = args.twit;  
     });
+    
+    var last_obj = store.get('last_obj');
+    $scope.last_obj = last_obj;
     
   }]);
 
